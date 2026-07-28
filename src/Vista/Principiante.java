@@ -51,6 +51,7 @@ public class Principiante extends javax.swing.JPanel {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Principiante");
 
+        TxtTiempo.setBackground(new java.awt.Color(255, 255, 255));
         TxtTiempo.setFont(new java.awt.Font("Showcard Gothic", 0, 36)); // NOI18N
         TxtTiempo.setForeground(new java.awt.Color(0, 0, 0));
 
