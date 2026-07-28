@@ -8,6 +8,6 @@ package controlador;
  *
  * @author bycha
  */
-public class Controlador {
+public class Juego {
     
 }
