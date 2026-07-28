@@ -4,6 +4,9 @@
  */
 package Vista;
 
+import java.awt.BorderLayout;
+import javax.swing.JPanel;
+
 /**
  *
  * @author bycha
@@ -13,6 +16,26 @@ public class Menu extends javax.swing.JFrame {
     /**
      * Creates new form Menu
      */
+    
+    private static Menu instancia;
+      
+     private void EscogerVentana(JPanel panel){
+    panel.setSize(700, 570);
+    panel.setLocation(0,0);
+    
+    JPMenu.removeAll();
+        JPMenu.add(panel, BorderLayout.CENTER);
+        JPMenu.revalidate();
+        JPMenu.repaint();
+     }
+    
+ public static Menu getInstancia() {
+        return instancia;
+    }
+
+    public void mostrar() {
+        this.setVisible(true);
+    }
     public Menu() {
         initComponents();
     }
@@ -35,6 +58,7 @@ public class Menu extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 204, 204));
+        setPreferredSize(new java.awt.Dimension(700, 590));
 
         JPMenu.setBackground(new java.awt.Color(0, 153, 153));
         JPMenu.setPreferredSize(new java.awt.Dimension(700, 570));
@@ -46,11 +70,21 @@ public class Menu extends javax.swing.JFrame {
         BtnJugador.setBackground(new java.awt.Color(0, 0, 153));
         BtnJugador.setFont(new java.awt.Font("Showcard Gothic", 0, 36)); // NOI18N
         BtnJugador.setText("Jugador");
+        BtnJugador.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnJugadorActionPerformed(evt);
+            }
+        });
 
         BtnIntermedio.setBackground(new java.awt.Color(0, 153, 51));
         BtnIntermedio.setFont(new java.awt.Font("Showcard Gothic", 0, 48)); // NOI18N
         BtnIntermedio.setForeground(new java.awt.Color(0, 0, 0));
         BtnIntermedio.setText("Principiante");
+        BtnIntermedio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnIntermedioActionPerformed(evt);
+            }
+        });
 
         jButton2.setBackground(new java.awt.Color(204, 204, 0));
         jButton2.setFont(new java.awt.Font("Showcard Gothic", 0, 48)); // NOI18N
@@ -120,11 +154,27 @@ public class Menu extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
+        Avanzado panel = new Avanzado();
+        EscogerVentana(panel);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
+        Intermedio panel = new Intermedio();
+        EscogerVentana(panel);
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void BtnJugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnJugadorActionPerformed
+        // TODO add your handling code here:
+        Jugador panel = new Jugador();
+        EscogerVentana(panel);
+    }//GEN-LAST:event_BtnJugadorActionPerformed
+
+    private void BtnIntermedioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnIntermedioActionPerformed
+        // TODO add your handling code here:
+        Principiante panel = new Principiante();
+        EscogerVentana(panel);
+    }//GEN-LAST:event_BtnIntermedioActionPerformed
 
     /**
      * @param args the command line arguments
