@@ -38,6 +38,7 @@ public class Menu extends javax.swing.JFrame {
     }
     public Menu() {
         initComponents();
+      
     }
 
     /**
@@ -174,6 +175,7 @@ public class Menu extends javax.swing.JFrame {
         // TODO add your handling code here:
         Principiante panel = new Principiante();
         EscogerVentana(panel);
+        
     }//GEN-LAST:event_BtnIntermedioActionPerformed
 
     /**
@@ -219,4 +221,8 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
+
+    public void IniciarCronometro(boolean b) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }
