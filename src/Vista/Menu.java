@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package modelo;
+package Vista;
 
 /**
  *
@@ -35,7 +35,6 @@ public class Menu extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 204, 204));
-        setPreferredSize(new java.awt.Dimension(665, 560));
 
         JPMenu.setBackground(new java.awt.Color(0, 153, 153));
         JPMenu.setPreferredSize(new java.awt.Dimension(700, 570));
