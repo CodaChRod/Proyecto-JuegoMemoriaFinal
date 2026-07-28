@@ -27,5 +27,10 @@ public class Cronometro {
 });
 tiempo.start();
     }
+    public int MostrarCronometro(int segundos){
+         int min = segundos / 60;
+        int seg = segundos % 60;
+       return segundos;
+    }
     
 }

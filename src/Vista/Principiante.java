@@ -4,10 +4,17 @@
  */
 package Vista;
 
+
+
+
+
 /**
  *
  * @author bycha
  */
+
+
+
 public class Principiante extends javax.swing.JPanel {
 
     /**
@@ -15,6 +22,7 @@ public class Principiante extends javax.swing.JPanel {
      */
     public Principiante() {
         initComponents();
+
     }
 
     /**
@@ -102,9 +110,12 @@ public class Principiante extends javax.swing.JPanel {
         // TODO add your handling code here:
         Menu panel = new Menu();
         panel.setVisible(true);
-
+        
     }//GEN-LAST:event_BtnVolverActionPerformed
-
+public void IniciarCronometro(boolean activo){
+  
+      
+}
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnVolver;
