@@ -10,4 +10,5 @@ package modelo;
  */
 public class Carta {
     
+    //comentario random
 }
