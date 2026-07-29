@@ -4,37 +4,40 @@
  */
 package controlador;
 
-import Vista.Menu;
 import Vista.Principiante;
 import javax.swing.Timer;
 import modelo.Cronometro;
 
 /**
  *
- * @author bycha
+ * @author bycha y Troll
  */
 public class Juego {
 
-    private Cronometro modelo;
-    private Menu menu;
-    private Principiante principiante;
 
-    public Juego(Cronometro modelo, Menu menu) {
-        this.modelo = modelo;
-        this.menu = menu;
+    private Cronometro modeloCronometro;
+    private Principiante vistaPrincipiante;
+    private Timer timerControlador;
+    public Juego(Principiante vistaPrincipiante) {
+        this.vistaPrincipiante = vistaPrincipiante;
+        this.modeloCronometro = new Cronometro();
     }
-
-    public void IniciarCronometro(boolean activo) {
-        menu.IniciarCronometro(true);
-    }
-
-    public void MostrarCronometro(int segundos) {
-        //Timer tiempo = Cronometro.Principiante;
-        principiante.setToolTipText(segundos);
+   
+    public void iniciarJuegoControlador() {
+        this.modeloCronometro.reiniciarCronometro();
+        this.timerControlador = new Timer(1000, e -> {
+            modeloCronometro.incrementarSegundoCronometro();        
+            String tiempoTexto = modeloCronometro.obtenerTiempoFormateadoCronometro();
+            vistaPrincipiante.actualizarTextoTiempoVista(tiempoTexto);
+        });
         
-       
-       
-       
+        this.timerControlador.start();
+    }
+
+    public void detenerJuegoControlador() {
+        if (this.timerControlador != null) {
+            this.timerControlador.stop();
+        }
     }
 
 }

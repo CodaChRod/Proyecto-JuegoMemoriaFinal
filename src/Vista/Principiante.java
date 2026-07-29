@@ -10,18 +10,20 @@ package Vista;
 
 /**
  *
- * @author bycha
+ * @author bycha y el cerebelo de j
  */
 
 
 
 public class Principiante extends javax.swing.JPanel {
-
+  private controlador.Juego controladorJuego;
     /**
      * Creates new form Principiante
      */
     public Principiante() {
         initComponents();
+    this.controladorJuego = new controlador.Juego(this);
+    this.controladorJuego.iniciarJuegoControlador();
 
     }
 
@@ -45,7 +47,6 @@ public class Principiante extends javax.swing.JPanel {
 
         BtnVolver.setBackground(new java.awt.Color(255, 255, 153));
         BtnVolver.setFont(new java.awt.Font("Showcard Gothic", 0, 36)); // NOI18N
-        BtnVolver.setForeground(new java.awt.Color(0, 0, 0));
         BtnVolver.setText("Volver");
         BtnVolver.setPreferredSize(new java.awt.Dimension(200, 80));
         BtnVolver.addActionListener(new java.awt.event.ActionListener() {
@@ -55,13 +56,10 @@ public class Principiante extends javax.swing.JPanel {
         });
 
         jLabel1.setFont(new java.awt.Font("Showcard Gothic", 0, 36)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Principiante");
 
-        TxtTiempo.setBackground(new java.awt.Color(255, 255, 255));
         TxtTiempo.setFont(new java.awt.Font("Showcard Gothic", 0, 36)); // NOI18N
-        TxtTiempo.setForeground(new java.awt.Color(0, 0, 0));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -70,8 +68,8 @@ public class Principiante extends javax.swing.JPanel {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(47, 47, 47)
-                .addComponent(TxtTiempo, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(TxtTiempo, javax.swing.GroupLayout.DEFAULT_SIZE, 171, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(BtnVolver, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(56, 56, 56))
@@ -80,14 +78,12 @@ public class Principiante extends javax.swing.JPanel {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(BtnVolver, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(484, Short.MAX_VALUE))
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(14, 14, 14)
-                .addComponent(TxtTiempo, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(TxtTiempo)
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(BtnVolver, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGap(484, 484, 484))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -116,6 +112,10 @@ public void IniciarCronometro(boolean activo){
   
       
 }
+
+    public void actualizarTextoTiempoVista(String tiempoTexto) {
+        this.TxtTiempo.setText(tiempoTexto);
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnVolver;

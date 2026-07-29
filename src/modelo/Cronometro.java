@@ -4,33 +4,36 @@
  */
 package modelo;
 
-import javax.swing.Timer;
+
 
 /**
  *
- * @author bycha
+ * @author bycha y Guisepe
  */
 public class Cronometro {
-    private Timer tiempo;
-    private int segundos;
-    private boolean activo;
 
-    public Cronometro( int segundos, boolean activo) {
-        this.segundos = 0;
-        this.activo = false;
-    }
-    public void IniciarCronometro(){
-        activo = true;
-        tiempo = new Timer(1000, e -> {
-    segundos++;
-    
-});
-tiempo.start();
-    }
-    public int MostrarCronometro(int segundos){
-         int min = segundos / 60;
-        int seg = segundos % 60;
-       return segundos;
+    private int segundosCronometro;
+    public Cronometro() {
+        this.segundosCronometro = 0;
     }
     
+   
+    public void incrementarSegundoCronometro() {
+        this.segundosCronometro++;
+    }
+    
+    public void reiniciarCronometro() {
+        this.segundosCronometro = 0;
+    }
+    /*
+     * Formatea los segundos a formato mm:ss (ejemplo: "00:05").
+     */
+    public String obtenerTiempoFormateadoCronometro() {
+        int min = segundosCronometro / 60;
+        int seg = segundosCronometro % 60;
+        return String.format("%02d:%02d", min, seg);
+    }
+    public int obtenerSegundosCronometro() {
+        return segundosCronometro;
+    }
 }
