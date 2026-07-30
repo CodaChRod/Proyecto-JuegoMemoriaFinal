@@ -11,12 +11,12 @@ package modelo;
 public class Jugador {
     private int puntaje;
     private int intento;
-    private int parencontrada;
+    private int parEncontrada;
 
     public Jugador(int puntaje, int intento, int parencontrada) {
         this.puntaje = 0;
         this.intento = 0;
-        this.parencontrada = 0;
+        this.parEncontrada = 0;
     }
     public void definirPuntajeMinimo(int puntaje){
         if(puntaje <0){
@@ -32,12 +32,33 @@ public class Jugador {
             this.puntaje = puntaje;
         }
     }
-     public void restarPuntaje(int puntajre,boolean parencontrada){
+     public void restarPuntaje(int puntaje,boolean parencontrada){
         if(parencontrada){
             this.puntaje -=20;
         }else{
             this.puntaje = puntaje;
         }
     }
+     public String MostrarPuntaje (){
+         return String.format("%d", puntaje);
+     }
+     public int incrementarIntento(int intento, boolean encontradaCarta){
+         if (encontradaCarta == false){
+             intento ++;
+         }
+         return intento;
+     }
+      public String MostrarIntento (){
+         return String.format("%d", intento);
+     }
+      public int incrementarParejas(int parEncontrada, boolean encontradaCarta){
+         if (encontradaCarta == true){
+             parEncontrada ++;
+         }
+         return parEncontrada;
+}
+        public String MostrarParejas (){
+         return String.format("%d", parEncontrada);
+     }
 }
 
