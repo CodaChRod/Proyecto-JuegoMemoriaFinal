@@ -18,7 +18,7 @@ public class Jugador {
         this.intento = 0;
         this.parEncontrada = 0;
     }
-    public void definirPuntajeMinimo(int puntaje){
+    public void definirPuntajeMinimo(){
         if(puntaje <0){
             this.puntaje = 0;
         }else{
@@ -35,6 +35,7 @@ public class Jugador {
      public void restarPuntaje(int puntaje,boolean parencontrada){
         if(parencontrada){
             this.puntaje -=20;
+            definirPuntajeMinimo();
         }else{
             this.puntaje = puntaje;
         }
@@ -44,7 +45,7 @@ public class Jugador {
      }
      public int incrementarIntento(int intento, boolean encontradaCarta){
          if (encontradaCarta == false){
-             intento ++;
+             this.intento ++;
          }
          return intento;
      }
@@ -53,7 +54,7 @@ public class Jugador {
      }
       public int incrementarParejas(int parEncontrada, boolean encontradaCarta){
          if (encontradaCarta == true){
-             parEncontrada ++;
+             this.parEncontrada ++;
          }
          return parEncontrada;
 }
