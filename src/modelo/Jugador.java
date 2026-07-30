@@ -61,5 +61,16 @@ public class Jugador {
         public String MostrarParejas (){
          return String.format("%d", parEncontrada);
      }
+        
+        
+    public int obtenerPuntajeJugador() {
+        return this.puntaje;
+    }
+    public int obtenerIntentosJugador() {
+        return this.intento;
+    }
+    public int obtenerParejasEncontradasJugador() {
+        return this.parEncontrada;
+    }
 }
 
