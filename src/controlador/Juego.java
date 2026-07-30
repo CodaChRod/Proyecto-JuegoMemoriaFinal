@@ -64,6 +64,6 @@ public class Juego {
         }
     }
 public void mostrarPuntaje(){
-   
+   x
 }
 }
