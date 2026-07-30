@@ -63,7 +63,13 @@ public class Juego {
             this.timerControlador.stop();
         }
     }
-public void mostrarPuntaje(){
-   x
-}
+public void actualizarInformacionControlador() {
+        if (vistaPrincipiante != null && modeloJugador != null && modeloTablero != null) {
+            int puntaje = modeloJugador.obtenerPuntajeJugador();
+            int intentos = modeloJugador.obtenerIntentosJugador();
+            int parejasEncontradas = modeloJugador.obtenerParejasEncontradasJugador();
+            int totalParejas = modeloTablero.obtenerNivelActualTablero().obtenerParejasNivel();
+             vistaPrincipiante.actualizarInformacionVista(puntaje, intentos, parejasEncontradas, totalParejas);
+        }
+        }
 }
