@@ -22,9 +22,11 @@ public class Principiante extends javax.swing.JPanel {
     /**
      * Creates new form Principiante
      */
+    
     public Principiante() {
         initComponents();
     cargarMatrizBotones();
+    
     this.controladorJuego = new controlador.Juego(this);
     this.controladorJuego.iniciarJuegoControlador();
     
@@ -515,6 +517,7 @@ public void IniciarCronometro(boolean activo){
     }
 
     public void actualizarInformacionVista(int puntaje, int intentos, int parejasEncontradas, int totalParejas) {
+        
       if (TxtPuntaje != null) TxtPuntaje.setText("Puntos: " + puntaje);
       if (TxtIntentos != null) TxtIntentos.setText("Intentos: " + intentos);
       if (TxtParejas != null) TxtParejas.setText("Parejas: " + parejasEncontradas + "/" + totalParejas);
