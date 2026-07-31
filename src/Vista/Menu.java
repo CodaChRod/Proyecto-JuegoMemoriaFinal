@@ -52,34 +52,21 @@ public class Menu extends javax.swing.JFrame {
 
         JPMenu = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        BtnJugador = new javax.swing.JButton();
         BtnIntermedio = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 204, 204));
-        setPreferredSize(new java.awt.Dimension(700, 590));
 
         JPMenu.setBackground(new java.awt.Color(0, 153, 153));
         JPMenu.setPreferredSize(new java.awt.Dimension(700, 570));
 
         jLabel1.setFont(new java.awt.Font("Showcard Gothic", 0, 36)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel1.setText("Juego de Memoria");
-
-        BtnJugador.setBackground(new java.awt.Color(0, 0, 153));
-        BtnJugador.setFont(new java.awt.Font("Showcard Gothic", 0, 36)); // NOI18N
-        BtnJugador.setText("Jugador");
-        BtnJugador.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtnJugadorActionPerformed(evt);
-            }
-        });
+        jLabel1.setText("Juego de Memoria de banderas");
 
         BtnIntermedio.setBackground(new java.awt.Color(0, 153, 51));
         BtnIntermedio.setFont(new java.awt.Font("Showcard Gothic", 0, 48)); // NOI18N
-        BtnIntermedio.setForeground(new java.awt.Color(0, 0, 0));
         BtnIntermedio.setText("Principiante");
         BtnIntermedio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -89,7 +76,6 @@ public class Menu extends javax.swing.JFrame {
 
         jButton2.setBackground(new java.awt.Color(204, 204, 0));
         jButton2.setFont(new java.awt.Font("Showcard Gothic", 0, 48)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(0, 0, 0));
         jButton2.setText("Intermedio");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -99,7 +85,6 @@ public class Menu extends javax.swing.JFrame {
 
         jButton3.setBackground(new java.awt.Color(153, 0, 0));
         jButton3.setFont(new java.awt.Font("Showcard Gothic", 0, 48)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(0, 0, 0));
         jButton3.setText("Avanzado");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -113,23 +98,18 @@ public class Menu extends javax.swing.JFrame {
             JPMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(JPMenuLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(JPMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(BtnIntermedio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(JPMenuLayout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
-                        .addComponent(BtnJugador, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(56, Short.MAX_VALUE))
+                .addGroup(JPMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 614, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, JPMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(BtnIntermedio, javax.swing.GroupLayout.DEFAULT_SIZE, 634, Short.MAX_VALUE)
+                        .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addContainerGap(60, Short.MAX_VALUE))
         );
         JPMenuLayout.setVerticalGroup(
             JPMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(JPMenuLayout.createSequentialGroup()
-                .addGroup(JPMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(BtnJugador, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(BtnIntermedio, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -164,12 +144,6 @@ public class Menu extends javax.swing.JFrame {
         Intermedio panel = new Intermedio();
         EscogerVentana(panel);
     }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void BtnJugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnJugadorActionPerformed
-        // TODO add your handling code here:
-        Jugador panel = new Jugador();
-        EscogerVentana(panel);
-    }//GEN-LAST:event_BtnJugadorActionPerformed
 
     private void BtnIntermedioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnIntermedioActionPerformed
         // TODO add your handling code here:
@@ -215,7 +189,6 @@ public class Menu extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnIntermedio;
-    private javax.swing.JButton BtnJugador;
     private javax.swing.JPanel JPMenu;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;

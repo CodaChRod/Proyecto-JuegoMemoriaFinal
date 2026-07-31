@@ -26,12 +26,8 @@ public class Principiante extends javax.swing.JPanel {
     public Principiante() {
         initComponents();
     cargarMatrizBotones();
-    
     this.controladorJuego = new controlador.Juego(this);
     this.controladorJuego.iniciarJuegoControlador();
-    
-    
-
     }
 
     /**
@@ -67,9 +63,14 @@ public class Principiante extends javax.swing.JPanel {
         btn2_3 = new javax.swing.JButton();
         btn3_3 = new javax.swing.JButton();
 
-        setPreferredSize(new java.awt.Dimension(700, 300));
+        setMaximumSize(new java.awt.Dimension(700, 280));
+        setMinimumSize(new java.awt.Dimension(700, 280));
+        setPreferredSize(new java.awt.Dimension(700, 280));
 
         jPanel2.setBackground(new java.awt.Color(0, 204, 0));
+        jPanel2.setMaximumSize(new java.awt.Dimension(700, 280));
+        jPanel2.setMinimumSize(new java.awt.Dimension(700, 280));
+        jPanel2.setPreferredSize(new java.awt.Dimension(700, 280));
 
         BtnVolver.setBackground(new java.awt.Color(255, 255, 153));
         BtnVolver.setFont(new java.awt.Font("Showcard Gothic", 0, 36)); // NOI18N
@@ -85,16 +86,18 @@ public class Principiante extends javax.swing.JPanel {
         TxtDificultad.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         TxtDificultad.setText("Principiante");
 
-        TxtPuntaje.setForeground(new java.awt.Color(255, 255, 255));
+        TxtPuntaje.setFont(new java.awt.Font("Showcard Gothic", 0, 14)); // NOI18N
         TxtPuntaje.setOpaque(true);
 
-        TxtIntentos.setForeground(new java.awt.Color(255, 255, 255));
+        TxtIntentos.setFont(new java.awt.Font("Showcard Gothic", 0, 14)); // NOI18N
         TxtIntentos.setOpaque(true);
 
-        TxtParejas.setForeground(new java.awt.Color(255, 255, 255));
+        TxtParejas.setBackground(new java.awt.Color(255, 255, 255));
+        TxtParejas.setFont(new java.awt.Font("Showcard Gothic", 0, 14)); // NOI18N
         TxtParejas.setOpaque(true);
 
         TxtTiempo.setBackground(new java.awt.Color(255, 255, 255));
+        TxtTiempo.setFont(new java.awt.Font("Showcard Gothic", 0, 36)); // NOI18N
         TxtTiempo.setOpaque(true);
 
         btn0_0.setText("[ ? ]");
@@ -267,14 +270,14 @@ public class Principiante extends javax.swing.JPanel {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(TxtIntentos, javax.swing.GroupLayout.DEFAULT_SIZE, 124, Short.MAX_VALUE)
+                                .addComponent(TxtIntentos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGap(142, 142, 142))
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(TxtDificultad, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(TxtParejas, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(3, 3, 3)))
-                        .addComponent(TxtPuntaje, javax.swing.GroupLayout.DEFAULT_SIZE, 99, Short.MAX_VALUE)
+                        .addComponent(TxtPuntaje, javax.swing.GroupLayout.DEFAULT_SIZE, 83, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(TxtTiempo, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -322,15 +325,14 @@ public class Principiante extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(BtnVolver, javax.swing.GroupLayout.DEFAULT_SIZE, 81, Short.MAX_VALUE)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(TxtTiempo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(TxtPuntaje, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPanel2Layout.createSequentialGroup()
-                            .addComponent(TxtDificultad, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(TxtIntentos, javax.swing.GroupLayout.DEFAULT_SIZE, 24, Short.MAX_VALUE)
-                                .addComponent(TxtParejas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                    .addComponent(TxtTiempo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(TxtPuntaje, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(TxtDificultad, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(TxtIntentos, javax.swing.GroupLayout.DEFAULT_SIZE, 24, Short.MAX_VALUE)
+                            .addComponent(TxtParejas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn0_0, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -366,7 +368,7 @@ public class Principiante extends javax.swing.JPanel {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 315, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 315, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -374,7 +376,6 @@ public class Principiante extends javax.swing.JPanel {
         // TODO add your handling code here:
         Menu panel = new Menu();
         panel.setVisible(true);
-
     }//GEN-LAST:event_BtnVolverActionPerformed
 
     private void btn0_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn0_1ActionPerformed
@@ -502,22 +503,31 @@ public void IniciarCronometro(boolean activo){
         botonesMatriz[3][3] = btn3_3;
     }
         //actualiza la visualisacion del boton...duhh
-        public void actualizarBotonVista(int fila, int col, String texto, boolean deshabilitado) {
+    public void actualizarBotonVista(int fila, int col, String texto, boolean deshabilitado) {
         if (botonesMatriz != null && fila >= 0 && fila < 4 && col >= 0 && col < 4) {
             javax.swing.JButton btn = botonesMatriz[fila][col];
-            btn.setText(texto);
-            btn.setEnabled(!deshabilitado); // Si ya se encontró la pareja, se deshabilita
+            
+            if (texto.equals("[ ? ]")) {
+                btn.setIcon(null);
+                btn.setText("[ ? ]");
+            } else {
+                javax.swing.ImageIcon icono = new javax.swing.ImageIcon("src/recursos/iconos/" + texto + ".png");
+                java.awt.Image img = icono.getImage().getScaledInstance(btn.getWidth(), btn.getHeight(), java.awt.Image.SCALE_SMOOTH);
+                btn.setIcon(new javax.swing.ImageIcon(img));
+                btn.setText("");
+            }
+            btn.setEnabled(!deshabilitado);
         }
     }
 
     public void actualizarTextoTiempoVista(String tiempoTexto) {
         this.TxtTiempo.setText(tiempoTexto);
-        
-        
     }
-
-    public void actualizarInformacionVista(int puntaje, int intentos, int parejasEncontradas, int totalParejas) {
-        
+    
+    public void mostrarVictoriaVista() {
+        this.TxtDificultad.setText("¡Victoria!");
+    }
+    public void actualizarInformacionVista(int puntaje, int intentos, int parejasEncontradas, int totalParejas) { 
       if (TxtPuntaje != null) TxtPuntaje.setText("Puntos: " + puntaje);
       if (TxtIntentos != null) TxtIntentos.setText("Intentos: " + intentos);
       if (TxtParejas != null) TxtParejas.setText("Parejas: " + parejasEncontradas + "/" + totalParejas);
